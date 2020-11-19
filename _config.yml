@@ -106,3 +106,11 @@ deploy:
   type: 'git'
   repo: https://github.com/Nevermore12321/Nevermore12321.github.io.git
   branch: main
+
+
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 20
