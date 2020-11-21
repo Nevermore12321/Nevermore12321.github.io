@@ -2,8 +2,7 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
-title: NeverMore
+# Site title: NeverMore
 subtitle: 'Keep Going! Keep Doing!'
 description: ''
 keywords:
@@ -13,7 +12,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://nevermore12321.github.io
+url: https://nevermore12321.github.io
 root: /
 # permalink: :year/:month/:day/:title/
 permalink: :year-:month-:day/:title/
