@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nevermore12321.github.io/2020-11-22/primary-sorting-algorithm/</loc>
+    
+    <lastmod>2020-11-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nevermore12321.github.io/tags/index.html</loc>
     
     <lastmod>2020-11-23</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://nevermore12321.github.io/categories/index.html</loc>
-    
-    <lastmod>2020-11-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nevermore12321.github.io/2020-11-22/primary-sorting-algorithm/</loc>
     
     <lastmod>2020-11-23</lastmod>
     
@@ -83,14 +83,14 @@
   </url>
   
   <url>
-    <loc>https://nevermore12321.github.io/categories/Algorithm/Sort/</loc>
+    <loc>https://nevermore12321.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://nevermore12321.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://nevermore12321.github.io/categories/Algorithm/Sort/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

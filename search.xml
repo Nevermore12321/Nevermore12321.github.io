@@ -30,7 +30,15 @@
   <entry>
     <title>primary-sorting-algorithm</title>
     <url>/2020-11-22/primary-sorting-algorithm/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>初级排序算法，包括：</p>
+<ul>
+<li>选择排序</li>
+<li>冒泡排序</li>
+<li>插入排序</li>
+</ul>
+<a id="more"></a>
+
+]]></content>
       <categories>
         <category>算法</category>
       </categories>
