@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>primary-sorting-algorithm</title>
+    <url>/2020-11-22/primary-sorting-algorithm/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020-11-23/hello-world/</url>
     <content><![CDATA[<a id="more"></a>
@@ -25,18 +37,6 @@
       <tags>
         <tag>java</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>primary-sorting-algorithm</title>
-    <url>/2020-11-22/primary-sorting-algorithm/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>排序算法</tag>
       </tags>
   </entry>
 </search>
