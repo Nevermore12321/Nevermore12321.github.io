@@ -1,5 +1,5 @@
 ---
-title: primary-sorting-algorithm
+title: 初级排序算法
 date: 2020-11-22 23:05:14
 tags:
 - 算法
@@ -14,4 +14,6 @@ categories:
 - 插入排序
 
 <!--more-->
+
+# 选择排序
 
