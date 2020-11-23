@@ -2,7 +2,7 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site title: NeverMore
+title: NeverMore
 subtitle: 'Keep Going! Keep Doing!'
 description: ''
 keywords:
