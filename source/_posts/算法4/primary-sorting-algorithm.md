@@ -1,11 +1,13 @@
 ---
 title: 初级排序算法
-date: 2020-11-22 23:05:14
 tags:
-- 算法
-- 排序算法
-categories: 
-- 算法
+  - 算法
+  - 排序算法
+categories:
+  - 算法
+abbrlink: 2e8ba7ec
+date: 2020-11-22 23:05:14
+comment: true
 ---
 
 初级排序算法，包括：
@@ -16,4 +18,6 @@ categories:
 <!--more-->
 
 # 选择排序
+
+
 
