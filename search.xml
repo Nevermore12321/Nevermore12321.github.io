@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2020-11-23/hello-world/</url>
+    <url>/posts/4a17b156/</url>
     <content><![CDATA[<a id="more"></a>
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
@@ -28,8 +28,8 @@
       </tags>
   </entry>
   <entry>
-    <title>primary-sorting-algorithm</title>
-    <url>/2020-11-22/primary-sorting-algorithm/</url>
+    <title>初级排序算法</title>
+    <url>/posts/2e8ba7ec/</url>
     <content><![CDATA[<p>初级排序算法，包括：</p>
 <ul>
 <li>选择排序</li>
@@ -38,13 +38,79 @@
 </ul>
 <a id="more"></a>
 
-]]></content>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1>]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
         <tag>算法</tag>
         <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二分搜索</title>
+    <url>/posts/9d399abe/</url>
+    <content><![CDATA[<p>二分查找（Binary Search）也叫作折半查找。二分查找有两个要求，一个是数列有序，另一个是数列使用顺序存储结构。时间复杂度<code>O(logn)</code></p>
+<a id="more"></a>
+
+
+<h1 id="基本的二分搜索"><a href="#基本的二分搜索" class="headerlink" title="基本的二分搜索"></a>基本的二分搜索</h1><p>基本的二分搜索，就是只要找到 target 就返回。</p>
+<p>例如：[1, 2, 4, 4, 4, 5, 6], target = 4</p>
+<ul>
+<li>第一次中位数是 a[3] = 4 </li>
+<li>找到target，直接返回 index=3</li>
+</ul>
+<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><ol>
+<li>因为初始化 right = nums.length - 1</li>
+<li>所以决定了「搜索区间」是 [left, right]</li>
+<li>所以决定了 while (left &lt;= right)</li>
+<li>大于 target , right = mid-1</li>
+<li>小于 target , left = mid+1</li>
+<li>因为我们只需找到一个 target 的索引即可, 所以当 nums[mid] == target 时可以立即返回</li>
+</ol>
+<h2 id="算法-golang-模板"><a href="#算法-golang-模板" class="headerlink" title="算法 golang 模板"></a>算法 golang 模板</h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Basic_bound</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		left <span class="keyword">int</span> = <span class="number">0</span></span><br><span class="line">		right <span class="keyword">int</span> = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> left &lt;= right &#123;</span><br><span class="line">		mid := left + (right - left) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">			left = mid + <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &gt; target &#123;</span><br><span class="line">			right = mid - <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 直接返回</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="寻找左侧边界的二分搜索"><a href="#寻找左侧边界的二分搜索" class="headerlink" title="寻找左侧边界的二分搜索"></a>寻找左侧边界的二分搜索</h1><p>寻找左侧边界的二分搜索，就是找到左边第一个等于 target 的值返回。</p>
+<p>例如：[1, 2, 4, 4, 4, 5, 6], target = 4</p>
+<ul>
+<li>第一次中位数是 a[3] = 4 </li>
+<li>target = a[3] ，但有可能 index=3 之前还有等于 4 的值，因此向左缩小范围</li>
+<li>找到左边第一个等于 4 的 index = 3 返回</li>
+</ul>
+<h2 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h2><ol>
+<li>因为初始化 right = nums.length - 1</li>
+<li>所以决定了「搜索区间」是 [left, right]</li>
+<li>所以决定了 while (left &lt;= right)</li>
+<li>大于 target , right = mid-1</li>
+<li>小于 target , left = mid+1</li>
+<li>等于 target , 向左收缩，right = mid-1</li>
+<li>判断 left 是否越界</li>
+<li>最终的 left 就是找到 从左边开始的第一个等于 target 的下标值</li>
+</ol>
+<h2 id="算法-golang-模板-1"><a href="#算法-golang-模板-1" class="headerlink" title="算法 golang 模板"></a>算法 golang 模板</h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Left_bound</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		left <span class="keyword">int</span> = <span class="number">0</span></span><br><span class="line">		right <span class="keyword">int</span> = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> left &lt;= right &#123;</span><br><span class="line">		mid := left + (right - left) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">			left = mid + <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &gt; target &#123;</span><br><span class="line">			right = mid - <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">			<span class="comment">// 别返回，锁定左侧边界</span></span><br><span class="line">			right = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 最后要检查 left 越界的情况</span></span><br><span class="line">	<span class="keyword">if</span> left &gt;= <span class="built_in">len</span>(nums) || nums[left] != target &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="寻找右侧边界的二分查找"><a href="#寻找右侧边界的二分查找" class="headerlink" title="寻找右侧边界的二分查找"></a>寻找右侧边界的二分查找</h1><h2 id="算法思路-2"><a href="#算法思路-2" class="headerlink" title="算法思路"></a>算法思路</h2><ol>
+<li>因为初始化 right = nums.length - 1</li>
+<li>所以决定了「搜索区间」是 [left, right]</li>
+<li>所以决定了 while (left &lt;= right)</li>
+<li>大于 target , right = mid-1</li>
+<li>小于 target , left = mid+1</li>
+<li>等于 target , 向右收缩，left = mid+1</li>
+<li>判断 right 是否越界</li>
+<li>最终的 right 就是找到 从左边开始的第一个等于 target 的下标值</li>
+</ol>
+<h2 id="算法-golang-模板-2"><a href="#算法-golang-模板-2" class="headerlink" title="算法 golang 模板"></a>算法 golang 模板</h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Right_bound</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		left <span class="keyword">int</span> = <span class="number">0</span></span><br><span class="line">		right <span class="keyword">int</span> = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> left &lt;= right &#123;</span><br><span class="line">		mid := left + (right - left) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">			left = mid + <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &gt; target &#123;</span><br><span class="line">			right = mid - <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">			<span class="comment">// 别返回，锁定左侧边界</span></span><br><span class="line">			left = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 最后要检查 left 越界的情况</span></span><br><span class="line">	<span class="keyword">if</span> right &lt; <span class="number">0</span> || nums[right] != target &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>二分搜索</tag>
       </tags>
   </entry>
 </search>
